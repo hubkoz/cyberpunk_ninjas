@@ -1,0 +1,23 @@
+
+/* colors */
+$color-bg-purple: #2c002c;
+$color-bg-deep-sea: #002c2c;
+$color-font-cyan: #00ffff;
+$color-font-pink: #ff00ff;
+$color-font-pink-dark: #5a005a;
+
+/* padding */
+$padding-normal: 1rem;
+$padding-small: $padding-normal*0.5;
+$padding-xs: $padding-small*0.5;
+
+/* margin */
+$margin-normal: 1rem;
+$margin-small: $margin-normal*0.5;
+$margin-xs: $margin-small*0.5;
+
+/* borders */
+$border-standard: 1px solid $color-font-cyan;
+$border-fat: 2px solid $color-font-cyan;
+$border-radius-standard: 10px;
+$border-radius-circle: 50%;

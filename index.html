@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WWY Ninjas Game</title>
+    <link rel="stylesheet" href="/public/index.css" />
+  </head>
+  <body>
+    <header>
+      <figure>
+        <img id="ninja-img" src="/src/img/daria.png" alt="Daria Bomber" />
+        <figcaption id="ninja-name" class="nowrap">Daria Bomber</figcaption>
+      </figure>
+      <div class="container-dialog">
+        <p><span id="dialog"></span> <span id="name-span"></span></p>
+        <button id="next-dialog">&rarr;</button>
+      </div>
+    </header>
+    <main>
+      <div class="input-container">
+        <p>Your name</p>
+        <input id="name" type="text" />
+        <button id="name-btn">&rarr;</button>
+      </div>
+    </main>
+    <script type="module" src="/public/index.js"></script>
+  </body>
+</html>

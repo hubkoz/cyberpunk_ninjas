@@ -1,0 +1,51 @@
+header {
+
+    @include flex-center;
+    flex-direction: row;
+    align-items: flex-start;
+    width: fit-content;
+    padding: $padding-small;
+
+    figure {
+
+        @include flex-center;
+        flex-direction: column;
+        border: $border-fat;
+        border-radius: $border-radius-standard;
+        padding: $padding-small;
+        flex-basis: 40%;
+    
+        img {
+            border-radius: $border-radius-circle;
+            border: $border-standard;
+        }
+    
+        figcaption {
+            padding-top: $padding-small;
+        }
+    }
+
+    .container-dialog {
+
+        @include flex-center;
+        flex-direction: column;
+        gap: 1rem;
+        flex-basis: 60%;
+
+        p {
+            padding: $padding-small;
+            margin-left: $margin-small;
+            border: $border-fat;
+            border-radius: $border-radius-standard;
+        }
+
+        button {
+            @include button-basic;
+            font-weight: 900;
+            padding: $padding-small;
+            border-radius: $border-radius-circle;
+        }
+
+    }
+
+}

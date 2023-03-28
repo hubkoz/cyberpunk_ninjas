@@ -1,0 +1,36 @@
+@mixin background-gradient {
+    background: radial-gradient(circle at center center, $color-bg-purple, $color-bg-deep-sea);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin button-basic {
+    background: none;
+    box-shadow: none;
+    width: fit-content;
+    height: fit-content;
+    border: $border-fat;
+}
+
+@mixin location {
+    background-size: cover;
+    height: 50vh;
+    width: auto;
+    border-radius: $border-radius-standard;
+    border: $border-fat;
+    margin: $margin-small;
+}
+
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
