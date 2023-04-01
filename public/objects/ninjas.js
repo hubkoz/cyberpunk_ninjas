@@ -1,7 +1,7 @@
 /* NINJAS */
 const daria = {
     name: "Daria Bomber",
-    imgSrc: "../assets/img/daria.png",
+    imgSrc: "../src/img/daria.png",
     dialog: [
         "Hello and welcome in Wyszkow!",
         "They told me to babysit you, rookie so now you're my student. What's your name?",
@@ -12,21 +12,21 @@ const daria = {
         "Despite the advanced technology and prosperity of Wyszkow, there is a dark underbelly to the city. Crime and corruption are rampant, and the ninjas often find themselves caught in the crosshairs of powerful criminal organizations and rival factions.",
         "Despite the dangers, the ninjas of Wyszkow are fiercely loyal to their city and will stop at nothing to defend it from threats both external and internal. They are the guardians of the city, always watching and ready to strike at a moment's notice.",
         "Here's our beautiful city! Come and look around.",
-        "Oh no! There's an enemy! This one is quite weak but still stronger than you. You have to acquire skills to beat him up.",
+        "Oh no! There's an enemy! This one is quite weak but still stronger than you. You have to gain skills to beat him up.",
         "Here's our Training Room. You have to be stronger to face the villains!",
         "Punch the bag as hard as you can to gain skills.",
-        "When your skill level will be greater than enemy level you will be able to kill the enemy.",
-        "Now gain some skills and kill the Hulk!"
-    ]
+        "Wow, your muscles got very big! When your skill level will be greater than enemy level you will be able to defeat it.",
+        "Now gain some skills and kill the Hulk!",
+    ],
 };
 const mikus = {
     name: "MikuZ",
-    imgSrc: "../assets/img/mikus2.png",
+    imgSrc: "../src/img/mikus2.png",
     dialog: [
         "Yooo, I be MikuZ HAHA! Sup bro",
         "lorem ipsum bfskjhsfldjasflj fljfldlsaf lasfj ls fjlas lfj slaf slfjlsf",
-        "I just playin. My dialogues are programmed correctly."
-    ]
+        "I just playin. My dialogues are programmed correctly.",
+    ],
 };
 /* EXPORT */
 export const ninjas = { daria, mikus };

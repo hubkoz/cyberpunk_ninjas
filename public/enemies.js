@@ -1,12 +1,12 @@
 /* ENEMIES */
 const hulk = {
     name: "Hulk",
-    imgSrc: "../src/img/enemy1.png",
+    imgSrc: "../assets/img/enemy1.png",
     energy: 10,
 };
 const chicken = {
     name: "Chicken",
-    imgSrc: "../src/img/chicken.png",
+    imgSrc: "../assets/img/chicken.png",
     energy: 50,
 };
 /* export */

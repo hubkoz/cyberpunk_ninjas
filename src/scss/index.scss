@@ -1,16 +1,16 @@
+
 // abstract
 @import 'variables';
 @import 'mixins';
-//@import 'functions';
 
 // base
 @import 'reset';
 @import 'base';
 
-// components
+// layout - components
 @import 'components/header';
-@import 'components/input';
+@import 'components/main';
 
-// layout
-//@import 'header';
+// other
 @import 'utilities';
+
