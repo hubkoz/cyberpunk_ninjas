@@ -1,4 +1,15 @@
-header {
+#player-stats {
+    @include flex-center;
+    flex-direction: row;
+    gap: 1rem;
+    padding-bottom: $padding-small;
+    border-bottom: $border-standard;
+    display: none;
+}
+
+#ninja-dialog-container {
+
+    margin-top: $margin-small;
 
     @include flex-center;
     flex-direction: row;
