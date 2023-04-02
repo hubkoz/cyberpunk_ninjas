@@ -10,6 +10,11 @@
         padding: $padding-small;
         border-radius: $border-radius-standard;
         width: 4rem;
+
+        &:focus {
+            background-color: $color-font-cyan-transparent;
+        }
+
     }
 
     visibility: hidden;

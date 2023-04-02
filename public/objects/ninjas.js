@@ -18,9 +18,10 @@ const daria = {
         "Wow, your muscles got very big! When your skill level will be greater than enemy level you will be able to defeat it.",
         "I'll be training you here so you'll be getting 5 skills every 10 seconds.",
         "This is our shop. You can buy weapon here which will help you fight enemies.",
-        "Now gain some skills and kill the Hulk!",
+        "Now gain some skills and kill enemies!",
     ],
     skill: 5,
+    interval: 10000,
 };
 const mikus = {
     name: "MikuZ",
@@ -31,6 +32,7 @@ const mikus = {
         "I just playin. My dialogues are programmed correctly.",
     ],
     skill: 20,
+    interval: 5000,
 };
 /* EXPORT */
 export const ninjas = { daria, mikus };

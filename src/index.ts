@@ -40,6 +40,7 @@ const skillsStatsSpan = document.getElementById(
 const moneyStatsSpan = document.getElementById(
   "money-stats-span"
 ) as HTMLSpanElement;
+const nameStats = document.getElementById("name-stats") as HTMLParagraphElement;
 
 /* player */
 let playerName = "";
@@ -60,25 +61,24 @@ const enemiesList = Object.values(enemies);
 let enemyNum = 0;
 let enemy = enemiesList[enemyNum];
 
-/* functions */
-
 function nextDialog() {
   if (dialogNum < dialoguesAll.length - 1) {
     dialogNum++;
-    console.log(dialogNum);
+
+    /* Daria Bomber - tutorial */
     if (dialogNum === 1 && ninjaNum === 0) {
       displayNameInput();
       inputName.addEventListener("input", displayNameInput);
-      dialogBtn!.style.display = "none";
+      dialogBtn.style.display = "none";
     } else {
-      inputComponent!.style.display = "none";
-      dialogBtn!.style.display = "flex";
+      inputComponent.style.display = "none";
+      dialogBtn.style.display = "flex";
       if (dialogNum > 2) {
-        nameSpan!.innerText = "";
+        nameSpan.innerText = "";
       }
     }
     dialog = dialoguesAll[dialogNum];
-    dialogSpan!.textContent = dialog;
+    dialogSpan.textContent = dialog;
     if (dialogNum === 8 && ninjaNum === 0) showCity();
     if (dialogNum === 9 && ninjaNum === 0)
       enemyFigure!.style.visibility = "visible";
@@ -96,9 +96,11 @@ function nextDialog() {
     if (dialogNum === 14 && ninjaNum === 0) showShop();
     if (dialogNum === dialoguesAll.length - 1 && ninjaNum === 0) {
       footer!.style.visibility = "visible";
-      playerStats!.style.display = "flex";
-      dialogBtn.style.display = "none";
+      playerStats.style.display = "flex";
     }
+
+    /* hide next dialog button */
+    if (dialogNum === dialoguesAll.length - 1) dialogBtn.style.display = "none";
   }
 }
 
@@ -107,6 +109,14 @@ function addCard() {
     <img src=${ninja.imgSrc} alt=${ninja.name} />
     <figcaption class="nowrap">${ninja.name}<br/>${ninja.skill} skills / 10s</figcaption>
   </figure>`;
+  setInterval(setNinjaSkillsInterval, ninja.interval);
+}
+
+function setNinjaSkillsInterval() {
+  skills += ninja.skill;
+  skillsSpan.innerText = skills.toString();
+  skillsStatsSpan.innerText = skills.toString();
+  console.log(`skills added from card ${ninja.name}`);
 }
 
 function showGym() {
@@ -149,8 +159,8 @@ shopBtn.addEventListener("click", () => {
 
 bagImg.addEventListener("click", () => {
   skills += perHit;
-  perHitSpan!.innerText = perHit.toString();
-  skillsSpan!.innerText = skills.toString();
+  perHitSpan.innerText = perHit.toString();
+  skillsSpan.innerText = skills.toString();
   skillsStatsSpan.innerText = skills.toString();
   if (dialogNum === 11 && ninjaNum === 0) nextDialog();
 });
@@ -165,23 +175,46 @@ function displayNameInput() {
 }
 
 /* DOM manipulate */
-dialogSpan!.innerText = dialog;
+dialogSpan.innerText = dialog;
+
 ninjaCaption!.innerText = ninja.name;
-ninjaImg!.src = ninja.imgSrc;
-ninjaImg!.alt = ninja.name;
-enemyImg!.src = enemy.imgSrc;
-enemyImg!.alt = enemy.name;
-enemyNrgSpan!.innerText = enemy.energy.toString();
-enemyName!.innerText = enemy.name;
-perHitSpan!.innerText = perHit.toString();
-skillsSpan!.innerText = skills.toString();
-enemyPrizeSpan!.innerText = enemy.prize.toString();
+ninjaImg.src = ninja.imgSrc;
+ninjaImg.alt = ninja.name;
+
+enemyImg.src = enemy.imgSrc;
+enemyImg.alt = enemy.name;
+enemyNrgSpan.innerText = enemy.energy.toString();
+enemyName.innerText = enemy.name;
+enemyPrizeSpan.innerText = enemy.prize.toString();
+
+perHitSpan.innerText = perHit.toString();
+skillsSpan.innerText = skills.toString();
 
 dialogBtn.addEventListener("click", () => nextDialog());
 
 /* store player name */
-nameBtn!.addEventListener("click", () => {
+nameBtn.addEventListener("click", () => {
   playerName = inputName.value;
-  nameSpan!.innerText = `${playerName}!`;
+  console.log(playerName);
+  nameSpan.innerText = `${playerName}!`;
+  nameStats.innerText = `${playerName}`;
   nextDialog();
+});
+
+/* enemy fight */
+enemyImg.addEventListener("click", () => {
+  if (skills > enemy.energy) {
+    money += enemy.prize;
+    moneyStatsSpan.innerText = `${money.toString()}`;
+    enemyNum++;
+    enemy = enemiesList[enemyNum];
+    enemyImg.src = enemy.imgSrc;
+    enemyImg.alt = enemy.name;
+    enemyNrgSpan.innerText = enemy.energy.toString();
+    enemyName.innerText = enemy.name;
+    enemyPrizeSpan.innerText = enemy.prize.toString();
+    if (enemyNum % 5 === 0) {
+      console.log("next ninja!");
+    }
+  }
 });

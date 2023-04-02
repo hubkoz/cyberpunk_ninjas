@@ -30,6 +30,7 @@ const footer = document.getElementById("buttons-container");
 const playerStats = document.getElementById("player-stats");
 const skillsStatsSpan = document.getElementById("skills-stats-span");
 const moneyStatsSpan = document.getElementById("money-stats-span");
+const nameStats = document.getElementById("name-stats");
 /* player */
 let playerName = "";
 let perHit = 1;
@@ -46,11 +47,10 @@ let dialog = dialoguesAll[dialogNum];
 const enemiesList = Object.values(enemies);
 let enemyNum = 0;
 let enemy = enemiesList[enemyNum];
-/* functions */
 function nextDialog() {
     if (dialogNum < dialoguesAll.length - 1) {
         dialogNum++;
-        console.log(dialogNum);
+        /* Daria Bomber - tutorial */
         if (dialogNum === 1 && ninjaNum === 0) {
             displayNameInput();
             inputName.addEventListener("input", displayNameInput);
@@ -87,8 +87,10 @@ function nextDialog() {
         if (dialogNum === dialoguesAll.length - 1 && ninjaNum === 0) {
             footer.style.visibility = "visible";
             playerStats.style.display = "flex";
-            dialogBtn.style.display = "none";
         }
+        /* hide next dialog button */
+        if (dialogNum === dialoguesAll.length - 1)
+            dialogBtn.style.display = "none";
     }
 }
 function addCard() {
@@ -96,6 +98,13 @@ function addCard() {
     <img src=${ninja.imgSrc} alt=${ninja.name} />
     <figcaption class="nowrap">${ninja.name}<br/>${ninja.skill} skills / 10s</figcaption>
   </figure>`;
+    setInterval(setNinjaSkillsInterval, ninja.interval);
+}
+function setNinjaSkillsInterval() {
+    skills += ninja.skill;
+    skillsSpan.innerText = skills.toString();
+    skillsStatsSpan.innerText = skills.toString();
+    console.log(`skills added from card ${ninja.name}`);
 }
 function showGym() {
     city.style.display = "none";
@@ -159,14 +168,33 @@ enemyImg.src = enemy.imgSrc;
 enemyImg.alt = enemy.name;
 enemyNrgSpan.innerText = enemy.energy.toString();
 enemyName.innerText = enemy.name;
+enemyPrizeSpan.innerText = enemy.prize.toString();
 perHitSpan.innerText = perHit.toString();
 skillsSpan.innerText = skills.toString();
-enemyPrizeSpan.innerText = enemy.prize.toString();
 dialogBtn.addEventListener("click", () => nextDialog());
 /* store player name */
 nameBtn.addEventListener("click", () => {
     playerName = inputName.value;
+    console.log(playerName);
     nameSpan.innerText = `${playerName}!`;
+    nameStats.innerText = `${playerName}`;
     nextDialog();
+});
+/* enemy fight */
+enemyImg.addEventListener("click", () => {
+    if (skills > enemy.energy) {
+        money += enemy.prize;
+        moneyStatsSpan.innerText = `${money.toString()}`;
+        enemyNum++;
+        enemy = enemiesList[enemyNum];
+        enemyImg.src = enemy.imgSrc;
+        enemyImg.alt = enemy.name;
+        enemyNrgSpan.innerText = enemy.energy.toString();
+        enemyName.innerText = enemy.name;
+        enemyPrizeSpan.innerText = enemy.prize.toString();
+        if (enemyNum % 5 === 0) {
+            console.log("next ninja!");
+        }
+    }
 });
 //# sourceMappingURL=index.js.map

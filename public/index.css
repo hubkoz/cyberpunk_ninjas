@@ -356,6 +356,9 @@ main .input-container button {
   border-radius: 10px;
   width: 4rem;
 }
+#buttons-container button:focus {
+  background-color: rgba(17, 59, 59, 0.9);
+}
 
 #shop-container {
   background-image: url("../src/img/shop.png");
