@@ -27,10 +27,14 @@ const gymBtn = document.getElementById("gym-btn");
 const ninjasBtn = document.getElementById("ninjas-btn");
 const shopBtn = document.getElementById("shop-btn");
 const footer = document.getElementById("buttons-container");
+const playerStats = document.getElementById("player-stats");
+const skillsStatsSpan = document.getElementById("skills-stats-span");
+const moneyStatsSpan = document.getElementById("money-stats-span");
 /* player */
 let playerName = "";
 let perHit = 1;
 let skills = 0;
+let money = 0;
 /* ninjas */
 const ninjasList = Object.values(ninjas);
 let ninjaNum = 0;
@@ -80,8 +84,11 @@ function nextDialog() {
         }
         if (dialogNum === 14 && ninjaNum === 0)
             showShop();
-        if (dialogNum === 15 && ninjaNum === 0)
+        if (dialogNum === dialoguesAll.length - 1 && ninjaNum === 0) {
             footer.style.visibility = "visible";
+            playerStats.style.display = "flex";
+            dialogBtn.style.display = "none";
+        }
     }
 }
 function addCard() {
@@ -130,6 +137,7 @@ bagImg.addEventListener("click", () => {
     skills += perHit;
     perHitSpan.innerText = perHit.toString();
     skillsSpan.innerText = skills.toString();
+    skillsStatsSpan.innerText = skills.toString();
     if (dialogNum === 11 && ninjaNum === 0)
         nextDialog();
 });
