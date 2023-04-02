@@ -1,0 +1,35 @@
+#ninjas-container {
+
+    background-image: url('../src/img/ninjas2.png');
+    @include location;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+
+    figure {
+
+        @include flex-center;
+        flex-direction: column;
+        border: $border-fat;
+        border-radius: $border-radius-standard;
+        padding: $padding-small;
+        width: 6rem;
+        margin: $margin-small;
+        background-color: $color-bg-ninja;
+    
+        img {
+            border-radius: $border-radius-circle;
+            border: $border-standard;
+        }
+    
+        figcaption {
+            text-align: center;
+            padding-top: $padding-small;
+            font-size: $font-size-small-bigger;
+        }
+
+    }
+
+    display: none;
+
+}

@@ -1,0 +1,17 @@
+#buttons-container {
+
+    padding-top: $padding-small;
+    @include flex-center;
+    justify-content: space-evenly;
+    gap: 1rem;
+
+    button {
+        @include button-basic;
+        padding: $padding-small;
+        border-radius: $border-radius-standard;
+        width: 4rem;
+    }
+
+    visibility: hidden;
+
+}

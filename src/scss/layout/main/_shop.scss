@@ -1,0 +1,8 @@
+#shop-container {
+
+    background-image: url('../src/img/shop.png');
+    @include location;
+
+    display: none;
+
+}

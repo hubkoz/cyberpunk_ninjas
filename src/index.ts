@@ -23,6 +23,16 @@ const perHitSpan = document.getElementById("per-hit") as HTMLSpanElement;
 const skillsSpan = document.getElementById("skills") as HTMLSpanElement;
 const bag = document.getElementById("bag");
 const bagImg = document.getElementById("bag-img") as HTMLImageElement;
+const enemyPrizeSpan = document.getElementById("prize") as HTMLSpanElement;
+const ninjasContainer = document.getElementById(
+  "ninjas-container"
+) as HTMLDivElement;
+const shop = document.getElementById("shop-container") as HTMLDivElement;
+const cityBtn = document.getElementById("city-btn") as HTMLButtonElement;
+const gymBtn = document.getElementById("gym-btn") as HTMLButtonElement;
+const ninjasBtn = document.getElementById("ninjas-btn") as HTMLButtonElement;
+const shopBtn = document.getElementById("shop-btn") as HTMLButtonElement;
+const footer = document.getElementById("buttons-container");
 
 /* player */
 let playerName = "";
@@ -41,7 +51,6 @@ let dialog = dialoguesAll[dialogNum];
 const enemiesList = Object.values(enemies);
 let enemyNum = 0;
 let enemy = enemiesList[enemyNum];
-let enemyNrg = enemy.energy;
 
 /* functions */
 
@@ -72,18 +81,60 @@ function nextDialog() {
     } else {
       dialogBtn.style.visibility = "visible";
     }
+    if (dialogNum === 13 && ninjaNum === 0) {
+      addCard();
+      showNinjas();
+    }
+    if (dialogNum === 14 && ninjaNum === 0) showShop();
+    if (dialogNum === 15 && ninjaNum === 0)
+      footer!.style.visibility = "visible";
   }
+}
+
+function addCard() {
+  ninjasContainer.innerHTML += `<figure>
+    <img src=${ninja.imgSrc} alt=${ninja.name} />
+    <figcaption class="nowrap">${ninja.name}<br/>${ninja.skill} skills / 10s</figcaption>
+  </figure>`;
 }
 
 function showGym() {
   city.style.display = "none";
+  ninjasContainer.style.display = "none";
+  shop.style.display = "none";
   gym.style.display = "flex";
 }
-
 function showCity() {
   gym.style.display = "none";
+  ninjasContainer.style.display = "none";
+  shop.style.display = "none";
   city.style.display = "flex";
 }
+function showNinjas() {
+  city.style.display = "none";
+  gym.style.display = "none";
+  shop.style.display = "none";
+  ninjasContainer.style.display = "flex";
+}
+function showShop() {
+  city.style.display = "none";
+  gym.style.display = "none";
+  ninjasContainer.style.display = "none";
+  shop.style.display = "flex";
+}
+
+cityBtn.addEventListener("click", () => {
+  showCity();
+});
+gymBtn.addEventListener("click", () => {
+  showGym();
+});
+ninjasBtn.addEventListener("click", () => {
+  showNinjas();
+});
+shopBtn.addEventListener("click", () => {
+  showShop();
+});
 
 bagImg.addEventListener("click", () => {
   skills += perHit;
@@ -112,8 +163,9 @@ enemyNrgSpan!.innerText = enemy.energy.toString();
 enemyName!.innerText = enemy.name;
 perHitSpan!.innerText = perHit.toString();
 skillsSpan!.innerText = skills.toString();
+enemyPrizeSpan!.innerText = enemy.prize.toString();
 
-dialogBtn!.addEventListener("click", nextDialog);
+dialogBtn.addEventListener("click", () => nextDialog());
 
 /* store player name */
 nameBtn!.addEventListener("click", () => {

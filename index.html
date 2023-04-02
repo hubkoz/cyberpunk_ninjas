@@ -18,31 +18,47 @@
         <button id="next-dialog">&rarr;</button>
       </div>
     </header>
+
     <main>
       <div class="input-container">
         <p>Your name</p>
         <input id="name" type="text" />
         <button id="name-btn">&rarr;</button>
       </div>
+
       <div class="city-container">
         <figure id="enemy">
           <img id="enemy-img" src="" alt="" />
           <figcaption class="nowrap">
-            <span id="enemy-name"></span> | Energy:
-            <span id="enemy-energy"></span>
+            <p id="enemy-name"></p>
+            <p>Energy: <span id="enemy-energy"></span></p>
+            <p>Prize: <span id="prize"></span></p>
           </figcaption>
         </figure>
       </div>
+
       <div class="gym-container">
         <figure id="bag">
           <img id="bag-img" src="../../src/img/bag.png" alt="training bag" />
           <figcaption class="nowrap">
-            Per hit: <span id="per-hit"></span> <br />
-            Skills: <span id="skills"></span>
+            <p>Per hit: <span id="per-hit"></span></p>
+            <p>Skills: <span id="skills"></span></p>
           </figcaption>
         </figure>
       </div>
+
+      <div id="ninjas-container"></div>
+
+      <div id="shop-container"></div>
     </main>
+
+    <footer id="buttons-container">
+      <button id="city-btn">City</button>
+      <button id="gym-btn">Gym</button>
+      <button id="ninjas-btn">Ninjas</button>
+      <button id="shop-btn">Shop</button>
+    </footer>
+
     <script type="module" src="/public/index.js"></script>
   </body>
 </html>

@@ -1,0 +1,23 @@
+.city-container {
+    background-image: url('../src/img/city.png');
+    @include location;
+    position: relative;
+
+    figure {
+        @include absolute-center;
+        bottom: 10;
+        width: 6rem;
+        height: auto;
+        text-align: center;
+
+        img {
+            padding: $padding-small;
+        }
+    
+    visibility: hidden;
+        
+    }
+
+    display: none;
+
+}

@@ -2,6 +2,7 @@ interface Ninja {
   name: string;
   imgSrc: string;
   dialog: string[];
+  skill: number;
 }
 
 /* NINJAS */
@@ -22,8 +23,11 @@ const daria: Ninja = {
     "Here's our Training Room. You have to be stronger to face the villains!",
     "Punch the bag as hard as you can to gain skills.",
     "Wow, your muscles got very big! When your skill level will be greater than enemy level you will be able to defeat it.",
+    "I'll be training you here so you'll be getting 5 skills every 10 seconds.",
+    "This is our shop. You can buy weapon here which will help you fight enemies.",
     "Now gain some skills and kill the Hulk!",
   ],
+  skill: 5,
 };
 
 const mikus: Ninja = {
@@ -34,6 +38,7 @@ const mikus: Ninja = {
     "lorem ipsum bfskjhsfldjasflj fljfldlsaf lasfj ls fjlas lfj slaf slfjlsf",
     "I just playin. My dialogues are programmed correctly.",
   ],
+  skill: 20,
 };
 
 /* EXPORT */

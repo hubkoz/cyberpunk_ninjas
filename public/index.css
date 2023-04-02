@@ -1,4 +1,5 @@
 /* colors */
+/* fonts */
 /* padding */
 /* margin */
 /* borders */
@@ -137,55 +138,6 @@ header .container-dialog button {
 main {
   width: 100%;
 }
-main .city-container {
-  background-image: url("../src/img/city.png");
-  background-size: cover;
-  height: 50vh;
-  width: auto;
-  border-radius: 10px;
-  border: 2px solid #00ffff;
-  margin: 0.5rem;
-  position: relative;
-  display: none;
-}
-main .city-container figure {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  bottom: 10;
-  width: 6rem;
-  height: auto;
-  text-align: center;
-  visibility: hidden;
-}
-main .city-container figure img {
-  padding: 0.5rem;
-}
-main .gym-container {
-  background-image: url("../src/img/gym.png");
-  background-size: cover;
-  height: 50vh;
-  width: auto;
-  border-radius: 10px;
-  border: 2px solid #00ffff;
-  margin: 0.5rem;
-  display: none;
-}
-main .gym-container figure {
-  width: 3rem;
-  height: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  visibility: hidden;
-}
-main .gym-container figure figcaption {
-  text-align: center;
-}
 main .input-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -232,6 +184,174 @@ main .input-container button {
   border-radius: 50%;
 }
 
+.city-container {
+  background-image: url("../src/img/city.png");
+  background-size: cover;
+  height: 50vh;
+  width: auto;
+  border-radius: 10px;
+  border: 2px solid #00ffff;
+  margin: 0.5rem;
+  position: relative;
+  display: none;
+}
+.city-container figure {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  bottom: 10;
+  width: 6rem;
+  height: auto;
+  text-align: center;
+  visibility: hidden;
+}
+.city-container figure img {
+  padding: 0.5rem;
+}
+
+.gym-container {
+  background-image: url("../src/img/gym.png");
+  background-size: cover;
+  height: 50vh;
+  width: auto;
+  border-radius: 10px;
+  border: 2px solid #00ffff;
+  margin: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: none;
+}
+.gym-container figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  visibility: hidden;
+}
+.gym-container figure img {
+  width: 3rem;
+  height: auto;
+}
+.gym-container figure figcaption {
+  text-align: center;
+}
+
+#ninjas-container {
+  background-image: url("../src/img/ninjas2.png");
+  background-size: cover;
+  height: 50vh;
+  width: auto;
+  border-radius: 10px;
+  border: 2px solid #00ffff;
+  margin: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  display: none;
+}
+#ninjas-container figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 2px solid #00ffff;
+  border-radius: 10px;
+  padding: 0.5rem;
+  width: 6rem;
+  margin: 0.5rem;
+  background-color: rgba(143, 0, 179, 0.747);
+}
+#ninjas-container figure img {
+  border-radius: 50%;
+  border: 1px solid #00ffff;
+}
+#ninjas-container figure figcaption {
+  text-align: center;
+  padding-top: 0.5rem;
+  font-size: 0.8rem;
+}
+
+#buttons-container {
+  padding-top: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  gap: 1rem;
+  visibility: hidden;
+}
+#buttons-container button {
+  background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 2px solid #00ffff;
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: 4rem;
+}
+
+#shop-container {
+  background-image: url("../src/img/shop.png");
+  background-size: cover;
+  height: 50vh;
+  width: auto;
+  border-radius: 10px;
+  border: 2px solid #00ffff;
+  margin: 0.5rem;
+  display: none;
+}
+
 .nowrap {
   white-space: nowrap;
+}
+
+.offscreen {
+  position: absolute;
+  left: -10000px;
 }

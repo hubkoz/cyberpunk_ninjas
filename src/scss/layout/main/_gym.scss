@@ -1,0 +1,28 @@
+.gym-container {
+
+    background-image: url('../src/img/gym.png');
+    @include location;
+    @include flex-center;
+
+
+    figure {
+
+        @include flex-center;
+        flex-direction: column;
+
+        img {
+            width: 3rem;
+            height: auto;
+        }
+
+        figcaption {
+            text-align: center;
+        }
+
+        visibility: hidden;
+
+    }
+
+    display: none;
+    
+}

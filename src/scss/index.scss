@@ -8,8 +8,13 @@
 @import 'base';
 
 // layout - components
-@import 'components/header';
-@import 'components/main';
+@import 'layout/header/header';
+@import 'layout/main/main';
+@import 'layout/main/city';
+@import 'layout/main/gym';
+@import 'layout/main/ninjas';
+@import 'layout/footer/footer';
+@import 'layout/main/shop';
 
 // other
 @import 'utilities';
