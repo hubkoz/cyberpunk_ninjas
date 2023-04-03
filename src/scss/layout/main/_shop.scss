@@ -2,7 +2,39 @@
 
     background-image: url('../src/img/shop.png');
     @include location;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    align-content: baseline;
+    overflow: scroll;
 
-    display: none;
+    figure {
+
+        @include flex-center;
+        flex-direction: column;
+        border: $border-fat;
+        border-radius: $border-radius-standard;
+        padding: $padding-small;
+        width: 9rem;
+        margin: $margin-small;
+        background-color: $color-bg-deep-sea-transparent;
+    
+        img {
+            border-radius: $border-radius-standard;
+            border: $border-standard;
+            background-color: transparent;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    
+        figcaption {
+            text-align: center;
+            padding-top: $padding-small;
+            font-size: $font-size-small-bigger;
+        }
+
+    }
+
+    //display: none;
 
 }

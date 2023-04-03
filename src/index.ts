@@ -44,7 +44,7 @@ const nameStats = document.getElementById("name-stats") as HTMLParagraphElement;
 
 /* player */
 let playerName = "";
-let perHit = 1;
+let perHit = 100;
 let skills = 0;
 let money = 0;
 
@@ -213,7 +213,7 @@ enemyImg.addEventListener("click", () => {
     enemyNrgSpan.innerText = enemy.energy.toString();
     enemyName.innerText = enemy.name;
     enemyPrizeSpan.innerText = enemy.prize.toString();
-    if (enemyNum % 5 === 0) {
+    if (enemyNum % 3 === 0) {
       console.log("next ninja!");
     }
   }

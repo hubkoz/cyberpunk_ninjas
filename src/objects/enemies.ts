@@ -20,37 +20,25 @@ const chicken: Enemy = {
   energy: 50,
   prize: 200,
 };
-const chicken2: Enemy = {
-  name: "Chicken2",
-  imgSrc: "../src/img/chicken.png",
-  energy: 50,
-  prize: 200,
+
+const hologram: Enemy = {
+  name: "Hologram",
+  imgSrc: "../src/img/hologram.png",
+  energy: 100,
+  prize: 300,
 };
-const chicken3: Enemy = {
-  name: "Chicken3",
-  imgSrc: "../src/img/chicken.png",
-  energy: 50,
-  prize: 200,
-};
-const chicken4: Enemy = {
-  name: "Chicken4",
-  imgSrc: "../src/img/chicken.png",
-  energy: 50,
-  prize: 200,
-};
-const chicken5: Enemy = {
-  name: "Chicken5",
-  imgSrc: "../src/img/chicken.png",
-  energy: 50,
-  prize: 200,
+
+const robot: Enemy = {
+  name: "Robot",
+  imgSrc: "../src/img/robot.png",
+  energy: 200,
+  prize: 500,
 };
 
 /* export */
 export const enemies = {
   hulk,
   chicken,
-  chicken2,
-  chicken3,
-  chicken4,
-  chicken5,
+  hologram,
+  robot,
 };
