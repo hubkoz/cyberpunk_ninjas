@@ -1,5 +1,6 @@
 import { ninjas } from "./objects/ninjas.js";
 import { enemies } from "./objects/enemies.js";
+import { weapons } from "./objects/weapons.js";
 
 /* DOM */
 
@@ -41,10 +42,14 @@ const moneyStatsSpan = document.getElementById(
   "money-stats-span"
 ) as HTMLSpanElement;
 const nameStats = document.getElementById("name-stats") as HTMLParagraphElement;
+const shopContainer = document.getElementById(
+  "shop-container"
+) as HTMLDivElement;
+let buyWeaponBtns = document.querySelectorAll(".buy");
 
 /* player */
 let playerName = "";
-let perHit = 100;
+let perHit = 1;
 let skills = 0;
 let money = 0;
 
@@ -60,6 +65,11 @@ let dialog = dialoguesAll[dialogNum];
 const enemiesList = Object.values(enemies);
 let enemyNum = 0;
 let enemy = enemiesList[enemyNum];
+
+/* weapons */
+const weaponsList = Object.values(weapons);
+let weaponNum = 0;
+let weapon = weaponsList[weaponNum];
 
 function nextDialog() {
   if (dialogNum < dialoguesAll.length - 1) {
@@ -95,6 +105,9 @@ function nextDialog() {
     }
     if (dialogNum === 14 && ninjaNum === 0) showShop();
     if (dialogNum === dialoguesAll.length - 1 && ninjaNum === 0) {
+      unlockWeaponShop();
+      buyWeaponBtns = document.querySelectorAll(".buy");
+
       footer!.style.visibility = "visible";
       playerStats.style.display = "flex";
     }
@@ -103,6 +116,42 @@ function nextDialog() {
     if (dialogNum === dialoguesAll.length - 1) dialogBtn.style.display = "none";
   }
 }
+
+/* shop logic */
+
+function unlockWeaponShop() {
+  shopContainer.innerHTML += `<figure>
+    <img src=${weapon.imgSrc} alt=${weapon.name} />
+    <figcaption class="nowrap">${weapon.name}<br/>Price: ${weapon.price} <br/> Per hit: +${weapon.perHit}</figcaption>
+    <button id="weapon-${weapon.name}" class="buy">Buy</button>
+  </figure>`;
+
+  buyWeaponBtns = document.querySelectorAll(".buy");
+
+  buyWeaponBtns.forEach((button) => {
+    button.addEventListener("click", () => {
+      buyWeapon();
+    });
+  });
+}
+
+function buyWeapon() {
+  if (money >= weapon.price) {
+    money -= weapon.price;
+    moneyStatsSpan.innerText = `${money.toString()}`;
+    perHit += weapon.perHit;
+    perHitSpan.innerText = perHit.toString();
+    let weaponJustBoughtCss = document.getElementById(
+      `weapon-${weapon.name}`
+    ) as HTMLButtonElement;
+    weaponJustBoughtCss.style.display = "none";
+    weaponNum++;
+    weapon = weaponsList[weaponNum];
+    unlockWeaponShop();
+  }
+}
+
+/* ninjas logic */
 
 function addCard() {
   ninjasContainer.innerHTML += `<figure>
@@ -195,7 +244,6 @@ dialogBtn.addEventListener("click", () => nextDialog());
 /* store player name */
 nameBtn.addEventListener("click", () => {
   playerName = inputName.value;
-  console.log(playerName);
   nameSpan.innerText = `${playerName}!`;
   nameStats.innerText = `${playerName}`;
   nextDialog();
