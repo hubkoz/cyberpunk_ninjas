@@ -14,13 +14,13 @@ const chicken = {
 const hologram = {
     name: "Hologram",
     imgSrc: "../src/img/hologram.png",
-    energy: 100,
+    energy: 200,
     prize: 300,
 };
 const robot = {
     name: "Robot",
     imgSrc: "../src/img/robot.png",
-    energy: 200,
+    energy: 500,
     prize: 500,
 };
 /* export */

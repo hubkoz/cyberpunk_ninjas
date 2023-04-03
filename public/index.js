@@ -133,15 +133,18 @@ function buyWeapon() {
 function addCard() {
     ninjasContainer.innerHTML += `<figure>
     <img src=${ninja.imgSrc} alt=${ninja.name} />
-    <figcaption class="nowrap">${ninja.name}<br/>${ninja.skill} skills / 10s</figcaption>
+    <figcaption class="nowrap">${ninja.name}<br/>${ninja.skill} skills / ${ninja.interval / 1000}s</figcaption>
   </figure>`;
-    setInterval(setNinjaSkillsInterval, ninja.interval);
+    setInterval(setNinjaSkillsInterval(ninja.skill), ninja.interval);
 }
-function setNinjaSkillsInterval() {
-    skills += ninja.skill;
-    skillsSpan.innerText = skills.toString();
-    skillsStatsSpan.innerText = skills.toString();
-    console.log(`skills added from card ${ninja.name}`);
+function setNinjaSkillsInterval(skill) {
+    return function () {
+        let skillsAdd = skill;
+        skills += skillsAdd;
+        skillsSpan.innerText = skills.toString();
+        skillsStatsSpan.innerText = skills.toString();
+        //console.log(`add skills ${skillsAdd}`);
+    };
 }
 function showGym() {
     city.style.display = "none";
@@ -197,10 +200,17 @@ function displayNameInput() {
     }
 }
 /* DOM manipulate */
-dialogSpan.innerText = dialog;
-ninjaCaption.innerText = ninja.name;
-ninjaImg.src = ninja.imgSrc;
-ninjaImg.alt = ninja.name;
+function ninjaUpdate() {
+    ninja = ninjasList[ninjaNum];
+    dialogNum = 0;
+    dialoguesAll = ninja.dialog;
+    dialog = dialoguesAll[dialogNum];
+    dialogSpan.innerText = dialog;
+    ninjaCaption.innerText = ninja.name;
+    ninjaImg.src = ninja.imgSrc;
+    ninjaImg.alt = ninja.name;
+}
+ninjaUpdate();
 enemyImg.src = enemy.imgSrc;
 enemyImg.alt = enemy.name;
 enemyNrgSpan.innerText = enemy.energy.toString();
@@ -228,9 +238,14 @@ enemyImg.addEventListener("click", () => {
         enemyNrgSpan.innerText = enemy.energy.toString();
         enemyName.innerText = enemy.name;
         enemyPrizeSpan.innerText = enemy.prize.toString();
-        if (enemyNum % 3 === 0) {
-            console.log("next ninja!");
-        }
+        if (enemyNum % 3 === 0)
+            nextNinja();
     }
 });
+function nextNinja() {
+    ninjaNum++;
+    ninjaUpdate();
+    addCard();
+    dialogBtn.style.display = "flex";
+}
 //# sourceMappingURL=index.js.map

@@ -1,4 +1,4 @@
-interface Ninja {
+export interface Ninja {
   name: string;
   imgSrc: string;
   dialog: string[];
