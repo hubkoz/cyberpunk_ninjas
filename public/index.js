@@ -104,17 +104,19 @@ function nextDialog() {
 }
 /* shop logic */
 function unlockWeaponShop() {
-    shopContainer.innerHTML += `<figure>
-    <img src=${weapon.imgSrc} alt=${weapon.name} />
-    <figcaption class="nowrap">${weapon.name}<br/>Price: ${weapon.price} <br/> Per hit: +${weapon.perHit}</figcaption>
-    <button id="weapon-${weapon.name}" class="buy">Buy</button>
-  </figure>`;
-    buyWeaponBtns = document.querySelectorAll(".buy");
-    buyWeaponBtns.forEach((button) => {
-        button.addEventListener("click", () => {
-            buyWeapon();
+    if (buyWeaponBtns.length < weaponsList.length) {
+        shopContainer.innerHTML += `<figure>
+      <img src=${weapon.imgSrc} alt=${weapon.name} />
+      <figcaption class="nowrap">${weapon.name}<br/>Price: ${weapon.price} <br/> Per hit: +${weapon.perHit}</figcaption>
+      <button id="weapon-${weapon.name}" class="buy">Buy</button>
+    </figure>`;
+        buyWeaponBtns = document.querySelectorAll(".buy");
+        buyWeaponBtns.forEach((button) => {
+            button.addEventListener("click", () => {
+                buyWeapon();
+            });
         });
-    });
+    }
 }
 function buyWeapon() {
     if (money >= weapon.price) {
@@ -229,19 +231,22 @@ nameBtn.addEventListener("click", () => {
 /* enemy fight */
 enemyImg.addEventListener("click", () => {
     if (skills > enemy.energy) {
-        if (enemyNum === enemiesList.length - 1)
+        if (enemyNum === enemiesList.length - 1) {
             win();
-        money += enemy.prize;
-        moneyStatsSpan.innerText = `${money.toString()}`;
-        enemyNum++;
-        enemy = enemiesList[enemyNum];
-        enemyImg.src = enemy.imgSrc;
-        enemyImg.alt = enemy.name;
-        enemyNrgSpan.innerText = enemy.energy.toString();
-        enemyName.innerText = enemy.name;
-        enemyPrizeSpan.innerText = enemy.prize.toString();
-        if (enemyNum % 3 === 0)
-            nextNinja();
+        }
+        else {
+            money += enemy.prize;
+            moneyStatsSpan.innerText = `${money.toString()}`;
+            enemyNum++;
+            enemy = enemiesList[enemyNum];
+            enemyImg.src = enemy.imgSrc;
+            enemyImg.alt = enemy.name;
+            enemyNrgSpan.innerText = enemy.energy.toString();
+            enemyName.innerText = enemy.name;
+            enemyPrizeSpan.innerText = enemy.prize.toString();
+            if (enemyNum % 3 === 0)
+                nextNinja();
+        }
     }
 });
 function win() {

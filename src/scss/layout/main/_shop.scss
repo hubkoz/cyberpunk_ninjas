@@ -5,8 +5,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: baseline;
-    align-content: baseline;
+    align-items: stretch;
+    align-content: flex-start;
     overflow: scroll;
 
     figure {

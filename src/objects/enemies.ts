@@ -59,22 +59,29 @@ const puma: Enemy = {
 const snake: Enemy = {
   name: "Snake",
   imgSrc: "../src/img/enemies/snake.png",
-  energy: 1400,
+  energy: 15000,
   prize: 8000,
 };
 
 const nomad: Enemy = {
   name: "Digital Nomad",
   imgSrc: "../src/img/enemies/nomad.png",
-  energy: 2500,
+  energy: 30000,
   prize: 16000,
 };
 
 const octopus: Enemy = {
   name: "Octopus",
   imgSrc: "../src/img/enemies/octopus.png",
-  energy: 5000,
+  energy: 50000,
   prize: 250000,
+};
+
+const emoji: Enemy = {
+  name: "Angry Emoji",
+  imgSrc: "../src/img/enemies/emoji.png",
+  energy: 150000,
+  prize: 500000,
 };
 
 /* export */
@@ -89,4 +96,5 @@ export const enemies = {
   snake,
   nomad,
   octopus,
+  emoji,
 };
