@@ -87,4 +87,6 @@ export const enemies = {
   bear,
   puma,
   snake,
+  nomad,
+  octopus,
 };

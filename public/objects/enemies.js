@@ -69,5 +69,7 @@ export const enemies = {
     bear,
     puma,
     snake,
+    nomad,
+    octopus,
 };
 //# sourceMappingURL=enemies.js.map
