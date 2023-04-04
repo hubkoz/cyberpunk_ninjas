@@ -11,16 +11,23 @@ const nokia = {
     price: 300,
     perHit: 25,
 };
+const shuriken = {
+    name: "Shuriken",
+    imgSrc: "../src/img/weapons/shuriken.png",
+    price: 1000,
+    perHit: 100,
+};
 const spaceship = {
     name: "Spaceship",
     imgSrc: "../src/img/weapons/spaceship.png",
-    price: 1000,
-    perHit: 100,
+    price: 3000,
+    perHit: 299,
 };
 /* export */
 export const weapons = {
     balisong,
     nokia,
+    shuriken,
     spaceship,
 };
 //# sourceMappingURL=weapons.js.map

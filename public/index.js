@@ -229,6 +229,8 @@ nameBtn.addEventListener("click", () => {
 /* enemy fight */
 enemyImg.addEventListener("click", () => {
     if (skills > enemy.energy) {
+        if (enemyNum === enemiesList.length - 1)
+            win();
         money += enemy.prize;
         moneyStatsSpan.innerText = `${money.toString()}`;
         enemyNum++;
@@ -242,6 +244,10 @@ enemyImg.addEventListener("click", () => {
             nextNinja();
     }
 });
+function win() {
+    enemyFigure.style.display = "none";
+    alert("you won");
+}
 function nextNinja() {
     ninjaNum++;
     ninjaUpdate();

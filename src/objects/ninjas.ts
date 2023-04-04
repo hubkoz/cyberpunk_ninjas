@@ -9,7 +9,7 @@ export interface Ninja {
 /* NINJAS */
 const daria: Ninja = {
   name: "Daria Bomber",
-  imgSrc: "../src/img/daria.png",
+  imgSrc: "../src/img/ninjas/daria.png",
   dialog: [
     "Hello and welcome in Wyszkow!",
     "They told me to babysit you, rookie so now you're my student. What's your name?",
@@ -34,15 +34,60 @@ const daria: Ninja = {
 
 const mikus: Ninja = {
   name: "MikuZ",
-  imgSrc: "../src/img/mikus2.png",
+  imgSrc: "../src/img/ninjas/mikus2.png",
   dialog: [
-    "Yooo, I be MikuZ HAHA! Sup bro",
+    "Yooo, you smashed theese enemies! I be MikuZ HAHA! Sup bro",
     "lorem ipsum bfskjhsfldjasflj fljfldlsaf lasfj ls fjlas lfj slaf slfjlsf",
     "I just playin. My dialogues are programmed correctly.",
+    "I may be small, but I pack a punch. My katanas are always at the ready, and I won't hesitate to slice through any threat to my city!",
+    "Besides that I am wind ninja! I inhale wind through my pipe and I get superhuman strength! *puff puff*. You want some?",
+    "Now I'm the one who'll be training you. Let's hit the gym and then kill some bastards!",
   ],
-  skill: 20,
+  skill: 40,
   interval: 5000,
 };
 
+const samrion: Ninja = {
+  name: "Samrion",
+  imgSrc: "../src/img/ninjas/samrion.png",
+  dialog: [
+    "Hello my friend. Now I will be your instructor.",
+    "I am Samrion. I may not look like much, but my magic gives me an edge that no physical weapon can match.",
+    "I spent many hours studying ancient tomes and practicing spells. Now it is the time for you to obtain this knowledge and powers.",
+    "We shall fight for our city!",
+  ],
+  skill: 150,
+  interval: 3000,
+};
+
+const anita: Ninja = {
+  name: "Anita e-YAY",
+  imgSrc: "../src/img/ninjas/anita.png",
+  dialog: [
+    "Hiya, meatbag! I'm Anita e-YAY, a pure AI ninja . I keep Wyszkow safe from all the bad guys.",
+    "I crunch data and make cool decisions, and my AI edge makes me faster than you can say 'hacking skills'.",
+    "Don't let my non-human looks fool you - I'm one bad ninja!",
+    "I've taken down some of the city's most powerful criminals with my super cool ninja skills.",
+    "Bring on the challenges and enemies, baby! I'll defend Wyszkow with all my ninja awesomeness!",
+  ],
+  skill: 500,
+  interval: 2000,
+};
+
+const max: Ninja = {
+  name: "Mach S-HOW",
+  imgSrc: "../src/img/ninjas/max.png",
+  dialog: [
+    "Yo, I'm Mach S-HOW, master of sound techniques. I saw what you're capable of and since now we'll be training together",
+    "I once took down a gang of cyber-criminals with just the sound of my voice. It was like a karaoke battle, but with more punches and less singing.",
+    "I don't need a big sword or fancy gadgets. All I need is my sound equipment and some sweet beats to take down my enemies.",
+    "I don't always fight crime, but when I do, I prefer to do it with style and a sick beat.",
+    "I've been called a ninja, a musician, and a superhero. But really, I'm just a guy who knows how to make sick beats.",
+    "They say silence is golden, but have they ever tried fighting crime with it? It's not very effective, trust me.",
+  ],
+  skill: 1000,
+  interval: 1000,
+};
+
 /* EXPORT */
-export const ninjas = { daria, mikus };
+export const ninjas = { daria, mikus, samrion, anita, max };

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WWY Ninjas Game</title>
-    <link rel="stylesheet" href="/public/index.css" />
+    <link rel="stylesheet" href="public/index.css" />
   </head>
   <body>
     <header>
@@ -30,7 +30,7 @@
     <main>
       <div class="input-container">
         <p>Your name</p>
-        <input id="name" type="text" />
+        <input id="name" type="text" autocomplete="off" spellcheck="false" />
         <button id="name-btn">&rarr;</button>
       </div>
 
@@ -47,7 +47,7 @@
 
       <div class="gym-container">
         <figure id="bag">
-          <img id="bag-img" src="../../src/img/bag.png" alt="training bag" />
+          <img id="bag-img" src="src/img/bag.png" alt="training bag" />
           <figcaption class="nowrap">
             <p>Per hit: <span id="per-hit"></span></p>
             <p>Skills: <span id="skills"></span></p>
@@ -67,6 +67,6 @@
       <button id="shop-btn">Shop</button>
     </footer>
 
-    <script type="module" src="/public/index.js"></script>
+    <script type="module" src="public/index.js"></script>
   </body>
 </html>
