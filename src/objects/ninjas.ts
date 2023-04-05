@@ -70,7 +70,7 @@ const anita: Ninja = {
     "I've taken down some of the city's most powerful criminals with my super cool ninja skills.",
     "Bring on the challenges and enemies, baby! I'll defend Wyszkow with all my ninja awesomeness!",
   ],
-  skill: 500,
+  skill: 1000,
   interval: 2000,
 };
 
@@ -85,9 +85,16 @@ const max: Ninja = {
     "I've been called a ninja, a musician, and a superhero. But really, I'm just a guy who knows how to make sick beats.",
     "They say silence is golden, but have they ever tried fighting crime with it? It's not very effective, trust me.",
   ],
-  skill: 1000,
+  skill: 5000,
+  interval: 1000,
+};
+const hub: Ninja = {
+  name: "Hub",
+  imgSrc: "../src/img/ninjas/hub.png",
+  dialog: ["...", "You won"],
+  skill: 10000,
   interval: 1000,
 };
 
 /* EXPORT */
-export const ninjas = { daria, mikus, samrion, anita, max };
+export const ninjas = { daria, mikus, samrion, anita, max, hub };

@@ -30,7 +30,7 @@ const eagle = {
     prize: 800,
 };
 const bear = {
-    name: "Bear",
+    name: "Teddy Bear",
     imgSrc: "../src/img/enemies/teddybear.png",
     energy: 3000,
     prize: 1500,
@@ -57,13 +57,43 @@ const octopus = {
     name: "Octopus",
     imgSrc: "../src/img/enemies/octopus.png",
     energy: 50000,
-    prize: 250000,
+    prize: 25000,
+};
+const cyborg = {
+    name: "Cyborg 100%",
+    imgSrc: "../src/img/enemies/cyborg.png",
+    energy: 150000,
+    prize: 50000,
 };
 const emoji = {
     name: "Angry Emoji",
     imgSrc: "../src/img/enemies/emoji.png",
-    energy: 150000,
-    prize: 500000,
+    energy: 250000,
+    prize: 100420,
+};
+const cop = {
+    name: "Corrupt Cop",
+    imgSrc: "../src/img/enemies/cop.png",
+    energy: 500000,
+    prize: 997112,
+};
+const samurai = {
+    name: "Samurai",
+    imgSrc: "../src/img/enemies/samurai.png",
+    energy: 850000,
+    prize: 2000000,
+};
+const terminator = {
+    name: "Terminator",
+    imgSrc: "../src/img/enemies/terminator.png",
+    energy: 9200006,
+    prize: 7777777,
+};
+const duck = {
+    name: "Devil Duck",
+    imgSrc: "../src/img/enemies/duck.png",
+    energy: 5000000,
+    prize: 5000000,
 };
 /* export */
 export const enemies = {
@@ -77,6 +107,11 @@ export const enemies = {
     snake,
     nomad,
     octopus,
+    cyborg,
     emoji,
+    cop,
+    samurai,
+    terminator,
+    duck,
 };
 //# sourceMappingURL=enemies.js.map

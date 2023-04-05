@@ -89,10 +89,10 @@ function nextDialog() {
     }
     dialog = dialoguesAll[dialogNum];
     dialogSpan.textContent = dialog;
-    if (dialogNum === 8 && ninjaNum === 0) showCity();
+    if (dialogNum === 8 && ninjaNum === 0) changeLocation(city);
     if (dialogNum === 9 && ninjaNum === 0)
       enemyFigure!.style.visibility = "visible";
-    if (dialogNum === 10 && ninjaNum === 0) showGym();
+    if (dialogNum === 10 && ninjaNum === 0) changeLocation(gym);
     if (dialogNum === 11 && ninjaNum === 0) {
       bag!.style.visibility = "visible";
       dialogBtn.style.visibility = "hidden";
@@ -101,13 +101,14 @@ function nextDialog() {
     }
     if (dialogNum === 13 && ninjaNum === 0) {
       addCard();
-      showNinjas();
+      changeLocation(ninjasContainer);
     }
-    if (dialogNum === 14 && ninjaNum === 0) showShop();
-    if (dialogNum === dialoguesAll.length - 1 && ninjaNum === 0) {
+    if (dialogNum === 14 && ninjaNum === 0) {
+      changeLocation(shop);
       unlockWeaponShop();
       buyWeaponBtns = document.querySelectorAll(".buy");
-
+    }
+    if (dialogNum === dialoguesAll.length - 1 && ninjaNum === 0) {
       footer!.style.visibility = "visible";
       playerStats.style.display = "flex";
     }
@@ -171,47 +172,24 @@ function setNinjaSkillsInterval(skill: number) {
     skills += skillsAdd;
     skillsSpan.innerText = skills.toString();
     skillsStatsSpan.innerText = skills.toString();
-    //console.log(`add skills ${skillsAdd}`);
   };
 }
 
-function showGym() {
-  city.style.display = "none";
-  ninjasContainer.style.display = "none";
-  shop.style.display = "none";
-  gym.style.display = "flex";
-}
-function showCity() {
-  gym.style.display = "none";
-  ninjasContainer.style.display = "none";
-  shop.style.display = "none";
-  city.style.display = "flex";
-}
-function showNinjas() {
-  city.style.display = "none";
-  gym.style.display = "none";
-  shop.style.display = "none";
-  ninjasContainer.style.display = "flex";
-}
-function showShop() {
-  city.style.display = "none";
-  gym.style.display = "none";
-  ninjasContainer.style.display = "none";
-  shop.style.display = "flex";
+function changeLocation(location: HTMLElement) {
+  const locations = [city, gym, ninjasContainer, shop];
+  locations.forEach((el) => {
+    if (el === location) {
+      el.style.display = "flex";
+    } else {
+      el.style.display = "none";
+    }
+  });
 }
 
-cityBtn.addEventListener("click", () => {
-  showCity();
-});
-gymBtn.addEventListener("click", () => {
-  showGym();
-});
-ninjasBtn.addEventListener("click", () => {
-  showNinjas();
-});
-shopBtn.addEventListener("click", () => {
-  showShop();
-});
+cityBtn.addEventListener("click", () => changeLocation(city));
+gymBtn.addEventListener("click", () => changeLocation(gym));
+ninjasBtn.addEventListener("click", () => changeLocation(ninjasContainer));
+shopBtn.addEventListener("click", () => changeLocation(shop));
 
 bagImg.addEventListener("click", () => {
   skills += perHit;
@@ -222,11 +200,11 @@ bagImg.addEventListener("click", () => {
 });
 
 function displayNameInput() {
-  inputComponent!.style.display = "flex";
+  inputComponent.style.display = "flex";
   if (inputName.value !== "") {
-    nameBtn!.style.visibility = "visible";
+    nameBtn.style.visibility = "visible";
   } else {
-    nameBtn!.style.visibility = "hidden";
+    nameBtn.style.visibility = "hidden";
   }
 }
 
@@ -285,12 +263,20 @@ enemyImg.addEventListener("click", () => {
 
 function win() {
   enemyFigure!.style.display = "none";
-  alert("you won");
+  nextDialog();
 }
 
 function nextNinja() {
-  ninjaNum++;
-  ninjaUpdate();
-  addCard();
-  dialogBtn.style.display = "flex";
+  if (ninjaNum < ninjasList.length - 1) {
+    ninjaNum++;
+    ninjaUpdate();
+    addCard();
+    dialogBtn.style.display = ninja.name === "hub" ? "none" : "flex";
+    if (ninjaNum === ninjasList.length - 1) {
+      dialogBtn.style.display = "none";
+    }
+  }
 }
+
+console.log(enemiesList.length);
+console.log(ninjasList.length);
