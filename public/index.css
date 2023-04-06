@@ -470,7 +470,7 @@ main .input-container button {
     width: 20rem;
   }
   body .gym-container figure img {
-    width: 7rem;
+    width: 6rem;
   }
   body #ninjas-container figure {
     width: 15rem;
@@ -488,5 +488,83 @@ main .input-container button {
     padding: 0.5rem;
     margin-top: 0.5rem;
     font-size: 1.5rem;
+  }
+}
+/* horizontal phone */
+@media screen and (max-height: 480px) and (max-width: 915px) {
+  body {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  body header #player-stats {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    margin: 0 -8px;
+    padding-top: 0.25rem;
+    font-size: 1rem;
+  }
+  body header #ninja-dialog-container {
+    -webkit-box-pack: baseline;
+        -ms-flex-pack: baseline;
+            justify-content: baseline;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  body header #ninja-dialog-container figure {
+    width: 8rem;
+  }
+  body header #ninja-dialog-container figure figcaption {
+    font-size: 1rem;
+  }
+  body header #ninja-dialog-container .container-dialog {
+    font-size: 0.8rem;
+  }
+  body main .input-container {
+    font-size: 1rem;
+  }
+  body main .input-container input {
+    padding: 0.25rem;
+  }
+  body main .city-container {
+    padding: 0.5rem;
+  }
+  body main .city-container figure {
+    width: 110px;
+  }
+  body main .city-container figure figcaption {
+    font-size: 0.8rem;
+  }
+  body main .gym-container figure img {
+    width: 30px;
+  }
+  body main .gym-container figure figcaption {
+    font-size: 0.8rem;
+  }
+  body main #shop-container figure {
+    width: 120px;
+  }
+  body main #shop-container figure figcaption {
+    font-size: 0.5rem;
+  }
+  body main #shop-container figure button {
+    font-size: 0.5rem;
+  }
+  body main #ninjas-container figure {
+    width: 120px;
+  }
+  body main #ninjas-container figure figcaption {
+    font-size: 0.5rem;
+  }
+  body footer {
+    position: absolute;
+    bottom: 0;
+    padding: 0.5rem;
+  }
+  body footer button {
+    font-size: 0.8rem;
   }
 }

@@ -15,7 +15,7 @@
         .gym-container {
             figure {
                 img {
-                    width: 7rem;
+                    width: 6rem;
                 }
             }
         }
@@ -47,3 +47,111 @@
 
 }
 
+
+/* horizontal phone */
+@media screen and (max-height: 480px) and (max-width: 915px) {
+    
+    body {
+        flex-direction: row;
+
+        header {
+
+            #player-stats {
+                position: absolute;
+                top: 0;
+                width: 100vw;
+                margin: 0 -8px;
+                padding-top: $padding-xs;
+                font-size: $font-size-standard;
+            }
+
+            #ninja-dialog-container {
+                justify-content: baseline;
+                align-items: flex-start;
+            
+                figure {
+                    width: 8rem;
+
+                    figcaption {
+                        font-size: $font-size-standard;
+                    }
+                }
+            
+                .container-dialog {
+                    font-size: $font-size-small-bigger;
+                }
+            
+            }            
+        }
+
+        main {
+
+            .input-container {
+                font-size: $font-size-standard;
+                input {
+                    padding: $padding-xs;
+                }
+            }
+
+            .city-container {
+                padding: $padding-small;
+
+                figure {
+                    width: 110px;
+
+                    figcaption {
+                        font-size: $font-size-small-bigger;
+                    }
+                }
+            }
+
+            .gym-container {
+                figure {
+
+                    img {
+                        width: 30px;
+                    }
+
+                    figcaption {
+                        font-size: $font-size-small-bigger;
+                    }
+            
+                }
+            }
+
+            #shop-container {
+                figure {
+                    width: 120px;
+
+                    figcaption {
+                        font-size: $font-size-small;
+                    }
+
+                    button {
+                        font-size: $font-size-small;
+                    }
+                }
+            }
+
+            #ninjas-container {
+                figure {
+                    width: 120px;
+                    figcaption {
+                        font-size: $font-size-small;
+                    }
+                }
+            }
+
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            padding: $padding-small;
+
+            button {
+                font-size: $font-size-small-bigger;
+            }
+        }
+    }
+}
