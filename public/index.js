@@ -243,6 +243,4 @@ function nextNinja() {
         }
     }
 }
-console.log(enemiesList.length);
-console.log(ninjasList.length);
 //# sourceMappingURL=index.js.map

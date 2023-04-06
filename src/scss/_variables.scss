@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Wallpoet&display=swap');
 
 /* colors */
 $color-bg-purple: #2c002c;
@@ -10,7 +11,11 @@ $color-bg-ninja: rgba(143, 0, 179, 0.747);
 $color-bg-deep-sea-transparent: rgba(0, 44, 44, 0.692);
 
 /* fonts */
+$font-dialog: 'Wallpoet', cursive;
+$font-basic: 'Allerta Stencil', sans-serif;
 $font-size-standard: 1rem;
+$font-size-bigger: $font-size-standard *1.5;
+$font-size-big: $font-size-standard *3;
 $font-size-small-bigger: $font-size-standard*0.8;
 $font-size-small: $font-size-standard*0.5;
 

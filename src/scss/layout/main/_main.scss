@@ -6,7 +6,6 @@ main {
     .input-container {
         @include flex-center;
         flex-direction: column;
-        @include absolute-center;
         gap: 1.5rem;
     
         input {
@@ -16,6 +15,7 @@ main {
             border-radius: $border-radius-standard;
             height: 2rem;
             text-align: center;
+            padding: $padding-small;
         }
     
         button {

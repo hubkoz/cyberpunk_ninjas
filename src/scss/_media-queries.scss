@@ -1,0 +1,49 @@
+
+/* tablets */
+
+@media screen and (min-width: 768px) {
+
+    body {
+        font-size: $font-size-bigger;
+
+        .city-container {
+            figure {
+                width: 20rem;
+            }
+        }
+
+        .gym-container {
+            figure {
+                img {
+                    width: 7rem;
+                }
+            }
+        }
+
+        #ninjas-container {
+            figure {
+                width: 15rem;
+                figcaption {
+                    font-size: $font-size-bigger;
+                }
+            }
+        }
+
+        #shop-container {
+            figure {
+                width: 18rem;
+                figcaption {
+                    font-size: $font-size-bigger;
+                }
+                button {
+                    padding: $padding-small;
+                    margin-top: $margin-small;
+                    font-size: $font-size-bigger;
+                }
+            }
+        }
+
+    }
+
+}
+

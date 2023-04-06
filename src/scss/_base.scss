@@ -1,9 +1,13 @@
+
 body {
+    width: 100vw;
+    height: 100vh;
     @include background-gradient;
     @include flex-center;
+    justify-content: space-evenly;
+    font-family: $font-basic;
+    font-size: $font-size-standard;
     flex-direction: column;
     color: $color-font-cyan;
-    width: 100%;
-    height: 100%;
     padding: $padding-small;
 }

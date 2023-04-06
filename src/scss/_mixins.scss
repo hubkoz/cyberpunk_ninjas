@@ -21,6 +21,7 @@
 
 @mixin location {
     background-size: cover;
+    background-position: center center;
     height: 50vh;
     width: auto;
     border-radius: $border-radius-standard;

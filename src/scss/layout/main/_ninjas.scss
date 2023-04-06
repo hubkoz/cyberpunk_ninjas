@@ -2,6 +2,7 @@
 
     background-image: url('../src/img/ninjas2.png');
     @include location;
+    @include flex-center;
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;

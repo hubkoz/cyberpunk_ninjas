@@ -1,62 +1,69 @@
-#player-stats {
-    @include flex-center;
-    flex-direction: row;
-    gap: 1rem;
-    padding-bottom: $padding-small;
-    border-bottom: $border-standard;
-    display: none;
-}
+header{
 
-#ninja-dialog-container {
-
-    margin-top: $margin-small;
-
-    @include flex-center;
-    flex-direction: row;
-    align-items: flex-start;
-    width: fit-content;
-    padding: $padding-small;
-
-    figure {
-
+    width: 100vw;
+    
+    #player-stats {
         @include flex-center;
-        flex-direction: column;
-        border: $border-fat;
-        border-radius: $border-radius-standard;
-        padding: $padding-small;
-        flex-basis: 40%;
-    
-        img {
-            border-radius: $border-radius-circle;
-            border: $border-standard;
-        }
-    
-        figcaption {
-            padding-top: $padding-small;
-        }
+        flex-direction: row;
+        gap: 1rem;
+        padding-bottom: $padding-small;
+        border-bottom: $border-standard;
+        display: none;
     }
-
-    .container-dialog {
-
+    
+    #ninja-dialog-container {
+    
         @include flex-center;
-        flex-direction: column;
-        gap: 0.7rem;
-        flex-basis: 60%;
+        flex-direction: row;
+        align-items: flex-start;
 
-        p {
-            padding: $padding-small;
-            margin-left: $margin-small;
+        padding: $padding-small;
+        margin: $margin-small;
+    
+        figure {
+    
+            @include flex-center;
+            flex-direction: column;
             border: $border-fat;
             border-radius: $border-radius-standard;
-        }
-
-        button {
-            @include button-basic;
-            font-weight: 900;
             padding: $padding-small;
-            border-radius: $border-radius-circle;
+            flex-basis: 40%;
+            width: 2rem;
+            height: auto;
+        
+            img {
+                border-radius: $border-radius-circle;
+                border: $border-standard;
+            }
+        
+            figcaption {
+                padding-top: $padding-small;
+            }
         }
-
+    
+        .container-dialog {
+    
+            @include flex-center;
+            flex-direction: column;
+            gap: 0.7rem;
+            flex-basis: 60%;
+    
+            p {
+                padding: $padding-small;
+                margin-left: $margin-small;
+                border: $border-fat;
+                border-radius: $border-radius-standard;
+                font-family: $font-dialog;
+            }
+    
+            button {
+                @include button-basic;
+                font-weight: 900;
+                padding: $padding-small;
+                border-radius: $border-radius-circle;
+            }
+    
+        }
+    
     }
-
 }

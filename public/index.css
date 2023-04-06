@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Wallpoet&display=swap");
 /* colors */
 /* fonts */
 /* padding */
@@ -23,6 +24,8 @@ input, button, textarea {
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
   background: radial-gradient(circle at center center, #2c002c, #002c2c);
   background-position: center center;
   background-repeat: no-repeat;
@@ -36,17 +39,23 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-family: "Allerta Stencil", sans-serif;
+  font-size: 1rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   color: #00ffff;
-  width: 100%;
-  height: 100%;
   padding: 0.5rem;
 }
 
-#player-stats {
+header {
+  width: 100vw;
+}
+header #player-stats {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,9 +74,7 @@ body {
   border-bottom: 1px solid #00ffff;
   display: none;
 }
-
-#ninja-dialog-container {
-  margin-top: 0.5rem;
+header #ninja-dialog-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -84,12 +91,10 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   padding: 0.5rem;
+  margin: 0.5rem;
 }
-#ninja-dialog-container figure {
+header #ninja-dialog-container figure {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -108,15 +113,17 @@ body {
   padding: 0.5rem;
   -ms-flex-preferred-size: 40%;
       flex-basis: 40%;
+  width: 2rem;
+  height: auto;
 }
-#ninja-dialog-container figure img {
+header #ninja-dialog-container figure img {
   border-radius: 50%;
   border: 1px solid #00ffff;
 }
-#ninja-dialog-container figure figcaption {
+header #ninja-dialog-container figure figcaption {
   padding-top: 0.5rem;
 }
-#ninja-dialog-container .container-dialog {
+header #ninja-dialog-container .container-dialog {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -134,13 +141,14 @@ body {
   -ms-flex-preferred-size: 60%;
       flex-basis: 60%;
 }
-#ninja-dialog-container .container-dialog p {
+header #ninja-dialog-container .container-dialog p {
   padding: 0.5rem;
   margin-left: 0.5rem;
   border: 2px solid #00ffff;
   border-radius: 10px;
+  font-family: "Wallpoet", cursive;
 }
-#ninja-dialog-container .container-dialog button {
+header #ninja-dialog-container .container-dialog button {
   background: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -173,11 +181,6 @@ main .input-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   gap: 1.5rem;
   display: none;
 }
@@ -188,6 +191,7 @@ main .input-container input {
   border-radius: 10px;
   height: 2rem;
   text-align: center;
+  padding: 0.5rem;
 }
 main .input-container button {
   background: none;
@@ -208,6 +212,7 @@ main .input-container button {
 .city-container {
   background-image: url("../src/img/city.png");
   background-size: cover;
+  background-position: center center;
   height: 50vh;
   width: auto;
   border-radius: 10px;
@@ -235,6 +240,7 @@ main .input-container button {
 .gym-container {
   background-image: url("../src/img/gym.png");
   background-size: cover;
+  background-position: center center;
   height: 50vh;
   width: auto;
   border-radius: 10px;
@@ -278,6 +284,7 @@ main .input-container button {
 #ninjas-container {
   background-image: url("../src/img/ninjas2.png");
   background-size: cover;
+  background-position: center center;
   height: 50vh;
   width: auto;
   border-radius: 10px;
@@ -285,6 +292,13 @@ main .input-container button {
   margin: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -326,6 +340,7 @@ main .input-container button {
 }
 
 #buttons-container {
+  width: 100%;
   padding-top: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -355,7 +370,9 @@ main .input-container button {
   border: 2px solid #00ffff;
   padding: 0.5rem;
   border-radius: 10px;
-  width: 4rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
 }
 #buttons-container button:focus {
   background-color: rgba(17, 59, 59, 0.9);
@@ -364,6 +381,7 @@ main .input-container button {
 #shop-container {
   background-image: url("../src/img/shop.png");
   background-size: cover;
+  background-position: center center;
   height: 50vh;
   width: auto;
   border-radius: 10px;
@@ -441,4 +459,34 @@ main .input-container button {
 .offscreen {
   position: absolute;
   left: -10000px;
+}
+
+/* tablets */
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 1.5rem;
+  }
+  body .city-container figure {
+    width: 20rem;
+  }
+  body .gym-container figure img {
+    width: 7rem;
+  }
+  body #ninjas-container figure {
+    width: 15rem;
+  }
+  body #ninjas-container figure figcaption {
+    font-size: 1.5rem;
+  }
+  body #shop-container figure {
+    width: 18rem;
+  }
+  body #shop-container figure figcaption {
+    font-size: 1.5rem;
+  }
+  body #shop-container figure button {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+  }
 }
