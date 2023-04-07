@@ -53,14 +53,14 @@ header{
                 margin-left: $margin-small;
                 border: $border-fat;
                 border-radius: $border-radius-standard;
-                font-family: $font-dialog;
+                //font-family: $font-dialog;
             }
     
             button {
                 @include button-basic;
-                font-weight: 900;
                 padding: $padding-small;
                 border-radius: $border-radius-circle;
+                border: none;
             }
     
         }

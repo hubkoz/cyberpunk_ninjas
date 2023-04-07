@@ -7,6 +7,12 @@
     flex-wrap: wrap;
     align-items: baseline;
     overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &#ninjas-container::-webkit-scrollbar {
+        display: none;
+    }
 
     figure {
 

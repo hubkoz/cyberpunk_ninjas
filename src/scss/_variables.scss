@@ -14,13 +14,14 @@ $color-bg-deep-sea-transparent: rgba(0, 44, 44, 0.692);
 $font-dialog: 'Wallpoet', cursive;
 $font-basic: 'Allerta Stencil', sans-serif;
 $font-size-standard: 1rem;
-$font-size-bigger: $font-size-standard *1.5;
-$font-size-big: $font-size-standard *3;
+$font-size-bigger: $font-size-standard *1.35;
+$font-size-big: $font-size-standard *2;
 $font-size-small-bigger: $font-size-standard*0.8;
 $font-size-small: $font-size-standard*0.5;
 
 /* padding */
 $padding-normal: 1rem;
+$padding-big: 2 * $padding-normal;
 $padding-small: $padding-normal*0.5;
 $padding-xs: $padding-small*0.5;
 

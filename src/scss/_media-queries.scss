@@ -155,3 +155,227 @@
         }
     }
 }
+
+/* tablet horizontal */
+@media screen and (min-height: 480px) and (max-height: 820px) and (min-width: 915px) and (max-width: 1280px) {
+    body {
+        flex-direction: row;
+
+        header {
+
+            #player-stats {
+                position: absolute;
+                top: 0;
+                width: 100vw;
+                margin: 0 -8px;
+                padding-top: $padding-xs;
+                font-size: $font-size-bigger;
+            }
+
+            #ninja-dialog-container {
+                justify-content: baseline;
+                align-items: flex-start;
+            
+                figure {
+                    width: 8rem;
+
+                    figcaption {
+                        font-size: $font-size-standard;
+                    }
+                }
+            
+                .container-dialog {
+                    font-size: $font-size-standard;
+                }
+            
+            }            
+        }
+
+        main {
+
+            .input-container {
+                font-size: $font-size-standard;
+                input {
+                    padding: $padding-xs;
+                }
+            }
+
+            .city-container {
+                padding: $padding-small;
+
+                figure {
+                    width: 180px;
+
+                    figcaption {
+                        font-size: $font-size-standard;
+                    }
+                }
+            }
+
+            .gym-container {
+                figure {
+
+                    img {
+                        width: 50px;
+                    }
+
+                    figcaption {
+                        font-size: $font-size-standard;
+                    }
+            
+                }
+            }
+
+            #shop-container {
+                figure {
+                    width: 150px;
+
+                    figcaption {
+                        font-size: $font-size-standard;
+                    }
+
+                    button {
+                        font-size: $font-size-standard;
+                    }
+                }
+            }
+
+            #ninjas-container {
+                figure {
+                    width: 150px;
+                    figcaption {
+                        font-size: $font-size-standard;
+                    }
+                }
+            }
+
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            padding: $padding-normal;
+
+            button {
+                font-size: $font-size-standard;
+            }
+        }
+    }
+}
+
+/* desktop */
+@media screen and (min-width: 1280px) {
+    body {
+        flex-direction: row;
+        padding: $padding-big;
+
+        header {
+
+            #player-stats {
+                position: absolute;
+                top: 0;
+                width: 100vw;
+                margin: 0 -30px;
+                padding-top: $padding-big;
+                font-size: $font-size-big;
+            }
+
+            #ninja-dialog-container {
+                justify-content: baseline;
+                align-items: flex-start;
+            
+                figure {
+
+                    flex-basis: 30%;
+
+                    figcaption {
+                        font-size: $font-size-bigger;
+                    }
+                }
+            
+                .container-dialog {
+                    
+                    flex-basis: 70%;
+
+                    font-size: $font-size-big;
+                    p {
+                        margin-left: $margin-normal;
+                    }
+                }
+            
+            }            
+        }
+
+        main {
+
+            .input-container {
+                font-size: $font-size-big;
+                input {
+                    padding: $padding-normal;
+                }
+            }
+
+            .city-container {
+                padding: $padding-small;
+
+                figure {
+                    width: 230px;
+
+                    figcaption {
+                        font-size: $font-size-bigger;
+                    }
+                }
+            }
+
+            .gym-container {
+                figure {
+
+                    img {
+                        width: 70px;
+                    }
+
+                    figcaption {
+                        font-size: $font-size-bigger;
+                    }
+            
+                }
+            }
+
+            #shop-container {
+                figure {
+                    width: 180px;
+                    margin: $margin-normal;
+
+                    figcaption {
+                        font-size: $font-size-bigger;
+                    }
+
+                    button {
+                        font-size: $font-size-bigger;
+                    }
+                }
+            }
+
+            #ninjas-container {
+                figure {
+                    width: 170px;
+                    figcaption {
+                        font-size: $font-size-bigger;
+                    }
+                }
+            }
+
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            padding: $padding-normal;
+            margin-bottom: $margin-small;
+
+            button {
+                font-size: $font-size-bigger;
+            }
+        }
+    }
+}
