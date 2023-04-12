@@ -9,7 +9,7 @@ export interface Ninja {
 /* NINJAS */
 const daria: Ninja = {
   name: "Daria Bomber",
-  imgSrc: "/src/img/ninjas/daria.png",
+  imgSrc: "src/img/ninjas/daria.png",
   dialog: [
     "Hello and welcome in Wyszkow!",
     "They told me to babysit you, rookie so now you're my student. What's your name?",
@@ -34,7 +34,7 @@ const daria: Ninja = {
 
 const mikus: Ninja = {
   name: "MikuZ",
-  imgSrc: "/src/img/ninjas/mikus2.png",
+  imgSrc: "src/img/ninjas/mikus2.png",
   dialog: [
     "Yooo, you smashed theese enemies! I be MikuZ HAHA! Sup bro",
     "lorem ipsum bfskjhsfldjasflj fljfldlsaf lasfj ls fjlas lfj slaf slfjlsf",
@@ -49,7 +49,7 @@ const mikus: Ninja = {
 
 const samrion: Ninja = {
   name: "Samrion",
-  imgSrc: "/src/img/ninjas/samrion.png",
+  imgSrc: "src/img/ninjas/samrion.png",
   dialog: [
     "Hello my friend. Now I will be your instructor.",
     "I am Samrion. I may not look like much, but my magic gives me an edge that no physical weapon can match.",
@@ -62,7 +62,7 @@ const samrion: Ninja = {
 
 const anita: Ninja = {
   name: "Anita e-YAY",
-  imgSrc: "/src/img/ninjas/anita.png",
+  imgSrc: "src/img/ninjas/anita.png",
   dialog: [
     "Hiya, meatbag! I'm Anita e-YAY, a pure AI ninja . I keep Wyszkow safe from all the bad guys.",
     "I crunch data and make cool decisions, and my AI edge makes me faster than you can say 'hacking skills'.",
@@ -76,7 +76,7 @@ const anita: Ninja = {
 
 const max: Ninja = {
   name: "Mach S-HOW",
-  imgSrc: "/src/img/ninjas/max.png",
+  imgSrc: "src/img/ninjas/max.png",
   dialog: [
     "Yo, I'm Mach S-HOW, master of sound techniques. I saw what you're capable of and since now we'll be training together",
     "I once took down a gang of cyber-criminals with just the sound of my voice. It was like a karaoke battle, but with more punches and less singing.",
@@ -90,7 +90,7 @@ const max: Ninja = {
 };
 const hub: Ninja = {
   name: "Hub",
-  imgSrc: "/src/img/ninjas/hub.png",
+  imgSrc: "src/img/ninjas/hub.png",
   dialog: ["...", "You won"],
   skill: 10000,
   interval: 1000,
