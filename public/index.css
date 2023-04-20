@@ -26,7 +26,6 @@ input, button, textarea {
 body {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
   background: radial-gradient(circle at center center, #2c002c, #002c2c);
   background-position: center center;
   background-repeat: no-repeat;
